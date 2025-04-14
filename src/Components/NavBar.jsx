@@ -82,6 +82,13 @@ export default function NavBar() {
             </div>
             
             <Outlet />
+
+            <div className='bg-[#161616] h-[10%] flex justify-center items-center text-[#dbdbdb]'>
+            <Typography variant="h7" gutterBottom={false}>
+                @2025 IMEX.SH. All rights reserved.
+                
+            </Typography>
+            </div>
         </>    
     )
 }
