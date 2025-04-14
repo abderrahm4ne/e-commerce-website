@@ -1,7 +1,23 @@
+import HomePage from './Components/HomePage';
 import NavBar from './Components/NavBar'
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 function App() {
+  {/*==== MATERIAL UI ====*/}
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'Open Sans, sans-serif',
+      box: {
+        fontFamily: 'Open Sans',
+        fontWeight: 'bold',
+        fontSize: '1.1rem',
+        textTransform: 'none', // removes uppercase by default
+      },
+    }
+  });
+  {/*==== MATERIAL UI ====*/}
 
         {/*==== ROUTER ====*/} 
           const router = createBrowserRouter(
@@ -19,9 +35,15 @@ function App() {
           )
         {/*==== ROUTER ====*/}   
   return(
-    <div style={{height:"100vh"}} className='w-[100%] bg-amber-100'>
+    <ThemeProvider theme={theme}>
+    <div style={{height:"100vh"}} className='w-[100%]'>
       <NavBar />
+      <div className='flex justify-center items-center h-[100vh] w-full'>
+        <HomePage />
+      </div>
+      
     </div>
+    </ThemeProvider>
   )
 }
 

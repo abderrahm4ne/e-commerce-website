@@ -12,10 +12,10 @@ export default function NavBar() {
 
     return(
         <>
-            <div className="w-full h-[7%] bg-[#EDE4E3] text-white flex justify-between items-center px-5">
+            <div className="w-full h-[7%] bg-[#dbdbdb] text-white flex justify-between items-center px-5" style={{borderBottom:"solid 1px #3B3B3B"}}>
 
                 {/*==== SHOP NAME ====*/}
-                <Typography variant="h4" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold"}}>
+                <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold"}}>
                     IMEX.SH
                 </Typography>
                 {/*==== SHOP NAME ====*/}
@@ -26,7 +26,7 @@ export default function NavBar() {
                     <Box >
                         <Button
                             // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"0.9rem"}}
+                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
                         >
                             Home
                         </Button>
@@ -34,7 +34,7 @@ export default function NavBar() {
                     <Box >
                         <Button
                             // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"0.9rem"}}
+                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
                         >
                             Products
                         </Button>
@@ -42,7 +42,7 @@ export default function NavBar() {
                     <Box >
                         <Button
                             // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"0.9rem"}}
+                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
                         >
                             About
                         </Button>
@@ -50,7 +50,7 @@ export default function NavBar() {
                     <Box >
                         <Button
                             // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"0.9rem"}}
+                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
                         >
                             Contact
                         </Button>
@@ -68,12 +68,13 @@ export default function NavBar() {
                             sx={{
                                 '& .MuiOutlinedInput-root': {
                                 height: '40px',
+                                width: '250px',
                                 alignItems: 'center',
-                                color: '#3B3B3B', // Text color
+                                color: '#3B3B3B',
                                 },
                                 '& .MuiInputBase-input': {
                                 padding: '8px 10px',
-                                fontSize: '0.875rem',
+                                fontSize: '1.5rem',
                                 },
                                 '& .MuiInputLabel-root': {
                                 color: '#3B3B3B', // Label color
