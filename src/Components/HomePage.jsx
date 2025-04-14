@@ -1,26 +1,31 @@
+// MUI
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+// ROUTER 
 import { NavLink } from 'react-router-dom';
 
 
 export default function HomePage() {
   return (
-    <div className="flex flex-row gap-10 justify-center-safe bg-[#fbf2f2] w-full h-full p-10">
+    <>
+    
         <div className="flex flex-col mb-[150px] justify-center items-start w-[40%] ">
-            <Typography variant="h3" gutterBottom={false} style={{padding:"10px", fontWeight:"bold"}}>
+            <Typography variant="h3" gutterBottom={false} style={{padding:"10px", fontWeight:"bold", color:"#3B3B3B", fontFamily:"Oswald"}}>
                 ORDER YOUR PRODUCTS NOW!
             </Typography>
-            <Typography variant="h5"  gutterBottom={false} style={{marginLeft:"30px", marginBottom:"5px", fontWeight:"lighter"}}>
-                Discover amazing products and deals!
-            </Typography> 
-            <button className='bg-[#3B3B3B] text-[#fbf2f2] text-5xl font-light py-4 px-5 rounded mt-5 hover:bg-[#3B3B3B] transition duration-300 ease-in-out' style={{borderRadius:"12px", boxShadow:"0px 10px 10px rgba(0, 0, 0, 0.2)", marginLeft:"30px", marginBottom:"20px"}}>
-                
-                    Explore Products
-                
-            </button>
+            <Typography variant="h5"  gutterBottom={false} style={{marginLeft:"30px", marginBottom:"35px", color:"orange", fontFamily:"Oswald"}}>
+                Discover amazing products and deals in Our Algerian store..!
+            </Typography>
+            <NavLink width="100%" to="/products" style={{textDecoration:"none"}}>
+                <Button variant="contained" sx={{backgroundColor:"#3B3B3B", fontSize:"2rem", fontFamily:"Oswald", color:"orange", marginLeft:"10px", padding:"12px 20px ", width:"150%"}}>SHOP NOW</Button>
+            </NavLink>
+            
+
         </div>
         <div className="w-[40%] mt-[140px]">
-            <img src="../public/DB/1-BDC032-NG/BDC032_NG-SUECIA-AMBIENTE.jpg" alt="negro" style={{borderRadius:"12px", boxShadow:"0px 10px 10px rgba(0, 0, 0, 0.2)"}}/>
+            <img src="../public/DB/1-BDC032-NG/BDC032_NG-SUECIA-AMBIENTE.jpg" alt="negro" style={{borderRadius:"12px", boxShadow:"-10px 10px 10px rgba(0, 0, 0, 0.5)"}}/>
         </div>
-    </div>
+    </>
   );
 }

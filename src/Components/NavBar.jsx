@@ -1,67 +1,45 @@
+// MUI 
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 
+// ROUTER
 import { Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 // #EDE4E3
 export default function NavBar() {
-
-          
-
     return(
         <>
-            <div className="w-full h-[7%] bg-[#dbdbdb] text-white flex justify-between items-center px-5" style={{borderBottom:"solid 1px #3B3B3B"}}>
+            <div className="w-full h-[8%] bg-[#dbdbdb] text-white flex items-center px-5" style={{borderBottom:"solid 1px #3B3B3B"}}>
 
-                {/*==== SHOP NAME ====*/}
-                <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold"}}>
-                    IMEX.SH
-                </Typography>
-                {/*==== SHOP NAME ====*/}
-
-                {/*==== NAVIGATION ====*/}
-                <div className='flex flex-row justify-self-center-safe'>
-                    
-                    <Box >
-                        <Button
-                            // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
-                        >
-                            Home
-                        </Button>
-                    </Box>
-                    <Box >
-                        <Button
-                            // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
-                        >
-                            Products
-                        </Button>
-                    </Box>
-                    <Box >
-                        <Button
-                            // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
-                        >
-                            About
-                        </Button>
-                    </Box>
-                    <Box >
-                        <Button
-                            // onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: '#3B3B3B', display: 'block', fontWeight:"bold", fontSize:"1.1rem"}}
-                        >
-                            Contact
-                        </Button>
-                    </Box>
-
+                {/*==== LEFT SECTION - SHOP NAME ====*/}
+                <div className="flex-1">
+                    <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald"}}>
+                        IMEX.SH
+                    </Typography>
                 </div>
 
-                {/*==== NAVIGATION ====*/}
-        
-                {/*==== SEARCH BAR ====*/}
-                <TextField
+                {/*==== CENTER SECTION - NAVIGATION ====*/}
+                <div className="flex justify-center">
+                    <div className='flex flex-row'>
+
+                        <NavLink to="/home" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>HOME</NavLink>
+
+                        <NavLink to="/products" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>PRODUCTS</NavLink>
+
+                        <NavLink to="/about" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>ABOUT</NavLink>
+
+                        <NavLink to="/contact" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>CONTACT</NavLink>
+
+                    </div>
+                </div>
+
+                {/*==== RIGHT SECTION - SEARCH BAR ====*/}
+                <div className="flex-1 flex justify-end ">
+                    <div className='flex flex-row gap-2'>
+                    <TextField
                             id="outlined-basic"
                             label="Search"
                             variant="outlined"
@@ -75,13 +53,15 @@ export default function NavBar() {
                                 '& .MuiInputBase-input': {
                                 padding: '8px 10px',
                                 fontSize: '1.5rem',
+                                fontFamily: 'Oswald',
                                 },
                                 '& .MuiInputLabel-root': {
-                                color: '#3B3B3B', // Label color
+                                color: '#3B3B3B',
                                 transform: 'translate(14px, 9px) scale(1)',
                                 '&.MuiInputLabel-shrink': {
                                     transform: 'translate(14px, -9px) scale(0.75)',
-                                    color: '#3B3B3B', // Ensures label stays dark when shrunk
+                                    color: '#3B3B3B',
+                                    fontFamily: 'Oswald',
                                 }
                                 },
                                 '& .MuiOutlinedInput-notchedOutline': {
@@ -95,12 +75,13 @@ export default function NavBar() {
                                 }
                             }}
                 />
-                {/*==== SEARCH BAR ====*/}
+                        <Button variant="contained" sx={{backgroundColor:"#3B3B3B"}}>SEARCH</Button>
+                    </div>
+                </div>
                 
             </div>
             
             <Outlet />
         </>    
-
     )
 }
