@@ -18,7 +18,7 @@ export default function HomePage() {
                 Discover amazing products and deals in Our Algerian store..!
             </Typography>
             <NavLink width="100%" to="/products" style={{textDecoration:"none"}}>
-                <Button variant="contained" sx={{backgroundColor:"#3B3B3B", fontSize:"2rem", fontFamily:"Oswald", color:"orange", marginLeft:"10px", padding:"12px 20px ", width:"150%"}}>SHOP NOW</Button>
+                <Button variant="contained" sx={{backgroundColor:"#3B3B3B", fontSize:"2rem", fontFamily:"Oswald", color:"orange", marginLeft:"10px", padding:"12px 20px ", width:"150%"}}>SEARCH TO ORDER</Button>
             </NavLink>
             
 

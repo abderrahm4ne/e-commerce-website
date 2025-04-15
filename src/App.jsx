@@ -17,7 +17,7 @@ function App() {
             createRoutesFromElements(
             
               <Route path='/' element={<NavBarRouter />}>
-                   <Route index path='home' element={
+                   <Route index path='/' element={
                           <HomePageRouter />
                     }/>
                  { /*<Route path="products" element={ <ProductPage />} />

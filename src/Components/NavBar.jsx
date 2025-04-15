@@ -85,7 +85,12 @@ export default function NavBar() {
 
             <div className='bg-[#161616] h-[10%] flex justify-center items-center text-[#dbdbdb]'>
             <Typography variant="h7" gutterBottom={false}>
-                @2025 IMEX.SH. All rights reserved.
+                @2025 IMEX.SH. All rights reserved.\
+                <br />
+                IMEX.SH is a fictitious company created for educational purposes only.
+                <br />
+                This website is not intended for commercial use.
+                
                 
             </Typography>
             </div>
