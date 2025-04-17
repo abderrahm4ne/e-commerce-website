@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 export default function Product({ product }) {
     return ( 
             
-                <div className="w-[20%] h-[470PX] bg-[#dbdbdb] m-2 p-4 rounded-lg shadow-md flex flex-col">
+                <div className="w-[17%] h-[470PX] bg-[#dbdbdb] m-2 p-4 rounded-lg shadow-md flex flex-col">
 
                     <img src={`../public/DB/${product.id}/1.jpg`} alt="productimg" width={"360px"} className=' self-center' style={{borderRadius:"5px"}}/>
 

@@ -24,7 +24,7 @@ export default function HomePage() {
 
         </div>
         <div className="w-[40%] mt-[140px]">
-            <img src="../public/DB/1/BDC032_NG-SUECIA-AMBIENTE.jpg" alt="negro" style={{borderRadius:"12px", boxShadow:"-10px 10px 10px rgba(0, 0, 0, 0.5)"}}/>
+            <img src="../public/DB/1/1.jpg" alt="negro" style={{borderRadius:"12px", boxShadow:"-10px 10px 10px rgba(0, 0, 0, 0.5)"}}/>
         </div>
     </>
   );
