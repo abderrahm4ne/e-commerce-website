@@ -1,5 +1,6 @@
 import HomePageRouter from './Routers/HomePageRouter';
 import NavBarRouter from './Routers/NavBarRouter'; 
+import ProductsPageRouter from './Routers/ProductsPageRouter';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -20,8 +21,8 @@ function App() {
                    <Route index path='/' element={
                           <HomePageRouter />
                     }/>
-                 { /*<Route path="products" element={ <ProductPage />} />
-                  <Route path="about" element={<AboutPage />} />
+                 <Route path="products" element={ <ProductsPageRouter />} />
+                { /*  <Route path="about" element={<AboutPage />} />
                   <Route path="contact" element={<ContactPage />} />
                   <Route path="cart" element={<CartPage />} /> */}
               </Route>
