@@ -17,9 +17,6 @@ import { gsap } from 'gsap';
 // #EDE4E3
 export default function NavBar() {
 
-    const animatebutton = (btn) => {
-        gsap.fromTo(`.${btn}`, {scale:1}, {scale:0.9, duration:0.2, ease:"power1.inOut", yoyo:true, repeat:1});  
-    };
 
 
     return(
@@ -37,13 +34,13 @@ export default function NavBar() {
                 <div className="flex justify-center">
                     <div className='flex flex-row'>
 
-                        <NavLink to="/" onClick={() => animatebutton("btn1")} className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2 btn1" style={{textDecoration:"none", fontFamily:"Montserrat"}}>HOME</NavLink>
+                        <NavLink to="/" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2 btn1" style={{textDecoration:"none", fontFamily:"Montserrat"}}>HOME</NavLink>
 
-                        <NavLink to="/products" onClick={() => animatebutton("btn2")} className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>PRODUCTS</NavLink>
+                        <NavLink to="/products" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>PRODUCTS</NavLink>
 
-                        <NavLink to="/about" onClick={() => animatebutton("btn3")} className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>ABOUT</NavLink>
+                        <NavLink to="/about" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>ABOUT</NavLink>
 
-                        <NavLink to="/contact" onClick={() => animatebutton("btn4")} className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>CONTACT</NavLink>
+                        <NavLink to="/contact" className="text-[#3B3B3B] hover:text-[#3B3B3B] font-bold text-md mx-2" style={{textDecoration:"none", fontFamily:"Montserrat"}}>CONTACT</NavLink>
 
                     </div>
                 </div>

@@ -1,8 +1,18 @@
+// REACT COMPONENTS
 import HomePageRouter from './Routers/HomePageRouter';
 import NavBarRouter from './Routers/NavBarRouter'; 
 import ProductsPageRouter from './Routers/ProductsPageRouter';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// ROUTER
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+
+// HOOKS
+import { useEffect, useState } from 'react';
+
+// ANOTHERS 
+import axios from 'axios';
+
 
 function App() {
   {/*==== MATERIAL UI ====*/}
@@ -29,7 +39,14 @@ function App() {
             
             )
           )
-        {/*==== ROUTER ====*/}        
+   {/*==== ROUTER ====*/}        
+   
+   {/*==== HOOKS ====*/}
+          
+   {/*==== HOOKS ====*/}
+
+   
+
   return(
     <RouterProvider router={router}>
         <ThemeProvider theme={theme}>
