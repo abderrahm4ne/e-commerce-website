@@ -30,7 +30,7 @@ export const ProductProvider = ({ children }) => {
     {/*==== axios ====*/}
     
     return(
-        <ProductContext.Provider value={{ myProducts, setMyProducts, loading, setLoading }}>
+        <ProductContext.Provider value={{ myProducts, setMyProducts, loading}}>
             {children}
         </ProductContext.Provider>
     )
