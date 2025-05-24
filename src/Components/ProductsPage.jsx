@@ -21,10 +21,10 @@ export default function ProductsPage() {
     const { myProducts , loading} = useContext(ProductContext);
     console.log(myProducts);
     return (
-        <div className='flex flex-col h-[100%] w-[100%] gap-4'>
+        <div className='flex flex-col gap-4 bg-amber-700 '>
             
             
-            <div className='flex flex-col items-start h-[10%] gap-1'>
+            <div className='flex flex-col items-start gap-4'>
                 
                 <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center"}}>
                     OUR PRODUCTS
@@ -33,8 +33,8 @@ export default function ProductsPage() {
             </div>
             
             
-            <div className='flex flex-col items-center h-[90%] w-[100%] gap-2'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%] h-[90%]'>
+            <div className='flex flex-col items-center gap-2'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%]'>
                         {loading ? (
                             <Typography variant="h1" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center"}}>
                                 Loading Products...

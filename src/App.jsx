@@ -15,6 +15,8 @@ import axios from 'axios';
 
 
 function App() {
+
+
   {/*==== MATERIAL UI ====*/}
   const theme = createTheme({
     typography: {
@@ -23,6 +25,7 @@ function App() {
   });
   {/*==== MATERIAL UI ====*/}
 
+  
    {/*==== ROUTER ====*/} 
           const router = createBrowserRouter(
             createRoutesFromElements(
@@ -31,11 +34,11 @@ function App() {
                    <Route index path='/' element={
                           <HomePageRouter />
                     }/>
-                 <Route path="products" element={ <ProductsPageRouter />} />
-                { /*  <Route path="about" element={<AboutPage />} />
-                  <Route path="contact" element={<ContactPage />} />
-                  <Route path="cart" element={<CartPage />} /> */}
-              </Route>
+                    <Route path="products" element={ <ProductsPageRouter />} />
+                  { /*  <Route path="about" element={<AboutPage />} />
+                    <Route path="contact" element={<ContactPage />} />
+                    <Route path="cart" element={<CartPage />} /> */}
+                </Route>
             
             )
           )

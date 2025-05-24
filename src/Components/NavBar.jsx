@@ -20,11 +20,11 @@ export default function NavBar() {
 
 
     return(
-        <div className='flex flex-col h-[100%]'>
-            <div className="w-full h-[8%] bg-[#dbdbdb] text-white flex items-center px-5" style={{borderBottom:"solid 1px #3B3B3B", justifyContent:"space-around"}}>
+        <div className='flex flex-col'>
+            <div className="w-full h-[80px] bg-[#dbdbdb] text-white flex items-center justify-baseline px-5" style={{borderBottom:"solid 1px #3B3B3B", justifyContent:"space-around"}}>
 
                 {/*==== LEFT SECTION - SHOP NAME ====*/}
-                <div className="flex-none w-[30%]">
+                <div className="flex-none w-[30%] h-[100%]">
                     <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald"}}>
                         IMEX.SH
                     </Typography>
@@ -47,10 +47,13 @@ export default function NavBar() {
                 
             </div>
             
-            <Outlet />
+            {/*==== OUTLET FOR ROUTES ====*/}
 
-            <div className='bg-[#161616] h-[10%] flex flex-col gap-0 justify-center items-center text-[#dbdbdb]'>
-                
+                <Outlet />                
+
+            {/*==== FOOTER ====*/}
+            <div className='bg-[#161616] flex flex-col p-1.5 justify-center items-center text-[#dbdbdb]'>
+
                     <Typography variant="h7" gutterBottom={false}>
                         @2025 IMEX.SH. All rights reserved.
                     </Typography>
@@ -64,6 +67,7 @@ export default function NavBar() {
                     </Typography>      
                 
             </div>
+            
         </div>    
     )
 }
