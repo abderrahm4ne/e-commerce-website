@@ -1,8 +1,9 @@
 // MUI
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-import Button from '@mui/material/Button';
+import { Fab, TextField, Box } from '@mui/material';
+import Modal from '@mui/material/Modal';
+
 
 
 // React Components
@@ -24,41 +25,61 @@ import { ProductBox } from './ProductBox';
 export default function ProductsPage() { 
 
     const { myProducts , loading} = useContext(ProductContext);
-    const [ searchField, setSearchField ] = useState(false);
+    const [ ShowSearch, setShowSearch ] = useState(false);
+    
     const searchFieldForGsap = useRef(null);
     console.log(myProducts);
 
-    // gsap animation for the search filed 
-    useEffect(() => {
-        if(searchField){
-            gsap.fromTo(searchFieldForGsap.current, 
-                { opacity: 0, x: -5}, 
-                { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }
-            )
+    
+
+        const handleClose = () => {
+            setShowSearch(false);
         }
-        if(!searchField){
-            gsap.to(searchFieldForGsap.current, 
-                { opacity: 0, x: -5, duration: 0.5, ease: "power2.out" }
-            )
+
+        const handleOpen = () => {
+            setShowSearch(true);
         }
-    }, [searchField])
 
     return (
         <div className='flex flex-col gap-10'>          
             
             <div className='flex flex-col items-start pl-20 gap-7'>
                 
-                <Typography variant="h3" gutterBottom={false} sx={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center", textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} className='bg-amber-500'>
+                <Typography variant="h3" gutterBottom={false} sx={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center", textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} className=''>
                     OUR PRODUCTS
                 </Typography>
                       
-
-                ``
-                    
-
             </div>
             
-            
+            <Fab
+            sx={{
+                position: 'fixed',
+                bottom: 20,
+                left: 20,
+                zIndex: 9999,
+                backgroundColor: '#3B3B3B',
+                color: "#dbdbdb",
+                ":hover":{
+                    color: "#dbdbdb",
+                    backgroundColor: "#3B3B3B",
+                }
+            }}
+            onClick={() => handleOpen()}
+            >
+            <SearchIcon />
+            </Fab>
+
+            {ShowSearch && ( 
+                   <Modal
+                        open={ShowSearch}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        asd
+                    </Modal>
+             )}
+
             <div className='flex flex-col items-center gap-2'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%]'>
                         {loading ? (
