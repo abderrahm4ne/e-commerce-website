@@ -53,29 +53,7 @@ export default function ProductsPage() {
                 </Typography>
                       
 
-                <div className='flex flex-row items-center gap-5 h-[70px] bg-amber-400  '>
-
-                 <Button variant="contained" sx={{fontSize:"1.1rem", backgroundColor:"#3B3B3B", height:"100%"}}>Search for your product   
-                        
-                        <SearchIcon
-                            sx={{
-                                color: "#3B3B3B",
-                                fontSize: "3rem",
-                                cursor: "pointer",
-                                transition: "color 0.3s ease-in-out",
-                                '&:hover': {
-                                    color: "#000000"
-                                }
-                            }}
-                            onClick={() => setSearchField(!searchField)}
-                            className=''>         
-
-                        </SearchIcon>
-
-                </Button>    
-                    <TextField ref={searchFieldForGsap} id="outlined-basic" label="Product name.." variant="outlined" sx={{width:"80vw", height:"100%"}} className='bg-amber-950'/>
-                    
-                </div>
+                ``
                     
 
             </div>
