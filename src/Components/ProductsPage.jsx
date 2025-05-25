@@ -21,7 +21,7 @@ export default function ProductsPage() {
     const { myProducts , loading} = useContext(ProductContext);
     console.log(myProducts);
     return (
-        <div className='flex flex-col gap-4 bg-amber-700 '>
+        <div className='flex flex-col gap-4 '>
             
             
             <div className='flex flex-col items-start gap-4'>

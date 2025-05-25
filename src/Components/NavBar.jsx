@@ -21,10 +21,10 @@ export default function NavBar() {
 
     return(
         <div className='flex flex-col'>
-            <div className="w-full h-[80px] bg-[#dbdbdb] text-white flex items-center justify-baseline px-5" style={{borderBottom:"solid 1px #3B3B3B", justifyContent:"space-around"}}>
+            <div className="w-full h-[80px] bg-[#dbdbdb] text-white flex flex-row justify-center items-center" style={{borderBottom:"solid 1px #3B3B3B", justifyContent:"space-around"}}>
 
                 {/*==== LEFT SECTION - SHOP NAME ====*/}
-                <div className="flex-none w-[30%] h-[100%]">
+                <div className="flex w-[30%]">
                     <Typography variant="h3" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald"}}>
                         IMEX.SH
                     </Typography>
