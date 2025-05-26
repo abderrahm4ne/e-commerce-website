@@ -2,20 +2,22 @@
 import HomePageRouter from './Routers/HomePageRouter';
 import NavBarRouter from './Routers/NavBarRouter'; 
 import ProductsPageRouter from './Routers/ProductsPageRouter';
+import Product from './Components/Product';
+
+// MUI
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // ROUTER
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 
 // HOOKS
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 // ANOTHERS 
 import axios from 'axios';
 
 
 function App() {
-
 
   {/*==== MATERIAL UI ====*/}
   const theme = createTheme({
@@ -34,7 +36,8 @@ function App() {
                    <Route index path='/' element={
                           <HomePageRouter />
                     }/>
-                    <Route path="products" element={ <ProductsPageRouter />} />
+                    <Route path="products" element={ <ProductsPageRouter />}/>
+                    <Route path='/products/:id' element={<Product />} />
                   { /*  <Route path="about" element={<AboutPage />} />
                     <Route path="contact" element={<ContactPage />} />
                     <Route path="cart" element={<CartPage />} /> */}
