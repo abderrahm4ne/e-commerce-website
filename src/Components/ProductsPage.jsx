@@ -1,8 +1,10 @@
 // MUI
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
-import { Fab, TextField, Box } from '@mui/material';
+import { Fab } from '@mui/material';
 import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
 
@@ -27,8 +29,20 @@ export default function ProductsPage() {
     const { myProducts , loading} = useContext(ProductContext);
     const [ ShowSearch, setShowSearch ] = useState(false);
     
-    const searchFieldForGsap = useRef(null);
     console.log(myProducts);
+
+    const style = {
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 400,
+                    bgcolor: '#dfdfdf',
+                    border: '1px solid #000000',
+                    boxShadow: 24,
+                    borderRadius: '8px',
+                    p: 4,
+                    };
 
     
 
@@ -62,23 +76,34 @@ export default function ProductsPage() {
                 ":hover":{
                     color: "#dbdbdb",
                     backgroundColor: "#3B3B3B",
-                }
+                },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
             }}
             onClick={() => handleOpen()}
             >
             <SearchIcon />
             </Fab>
 
-            {ShowSearch && ( 
-                   <Modal
-                        open={ShowSearch}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                    >
-                        asd
-                    </Modal>
-             )}
+      {/* Modal for Search       
+           <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={ShowSearch}
+                onClose={handleClose}
+            >
+                <Box sx={style}>
+                    <Typography>
+                        Search Products
+                    </Typography>
+
+                    <TextField id="outlined-basic" label="Search.." variant="outlined" />
+ 
+                </Box>
+            </Modal>
+
+         */}
 
             <div className='flex flex-col items-center gap-2'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[80%]'>
