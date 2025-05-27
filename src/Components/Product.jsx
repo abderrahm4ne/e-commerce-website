@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 // react hooks 
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 
 // components
@@ -19,9 +20,11 @@ export default function Product() {
     const { myProducts , loading} = useContext(ProductContext);
     const { id } = useParams();
 
+    const [ currentPicture, setCurrentPicture ] = useState('productPage.png');
+
     const currentProduct = myProducts.find(product => product.id === id);
     if (!currentProduct) {
-        return (
+        return (    
             <Typography variant='h5' className='text-center text-[#3B3B3B]'>
                 Product not found
             </Typography>
@@ -34,7 +37,7 @@ export default function Product() {
             
         <div className=' flex flex-row w-[98vw]'>
 
-            { /* OTHER PRODUCTS NAME */ }
+            { /* OTHERs PRODUCTS NAME */ }
 
               <div className='flex flex-col text-black-900 lg:w-[17vw] p-3 border-r-3 border-black-900 mt-3.5 mb-3.5 '>
 
@@ -51,7 +54,7 @@ export default function Product() {
                   </div>
               </div>
               
-            {/* OTHER PRODUCTS NAME */ }
+            {/* OTHERs PRODUCTS NAME */ }
 
 
 
@@ -64,19 +67,26 @@ export default function Product() {
                             Loading...
                         </Typography>
                     ) : (
-                      <div className='flex flex-col gap-0.5'>
+                      <div className='flex flex-col gap-1'>
 
 
                         <div className='border-3 border-black w-[22%] rounded-md'>
-                              <img src={`../public/DB/${id}/productPage.png`} alt={currentProduct.name}
+                              <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
                               className='w-[100%] h-[370px] rounded-md'></img>
                         </div>
 
 
                         <div className='flex flex-row justify-start gap-2 w-[24%]'>
+                            <div className='w-[70px] h-[72px] border-2 border-black rounded-sm' style={{cursor: 'pointer'}}>
+                                <img className='w-[70px] h-[70px] rounded-sm' src={`../public/DB/${id}/productPage.png`} alt="product page picture" onClick={() => {
+                                    setCurrentPicture('productPage.png');
+                                }}/>
+                            </div>
                             {currentProductArrayOfPictures.map((picture, index) => ( 
-                              <div key={index} className='w-[70px] h-[72px] border-2 border-black rounded-sm'>
-                                <img src={picture} alt={`Product ${index}`} className='w-[70px] h-[70px] rounded-sm'
+                              <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
+                                setCurrentPicture(`${index + 1}.jpg`)
+                              }} className='w-[70px] h-[72px] border-2 border-black rounded-sm'>
+                                <img src={picture} alt={`Product ${picture}`} className='w-[70px] h-[70px] rounded-sm'
                                 />
                               </div>
                             ))}
