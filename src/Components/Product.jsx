@@ -63,21 +63,7 @@ export default function Product() {
                 <div className='w-[100%] h-[90vh] p-3 mt-3.5 gap-5 mb-3.5 flex flex-col justify-center items-center '>
 
                     <div className='self-start ml-10 flex flex-row'>
-                        <NavLink to='/products' className='text-[#3B3B3B]'>
-                            <Typography variant='h5' className='text-[#3B3B3B] '>
-                                Products
-                            </Typography>
-                        </NavLink>
-                        
-                        <Typography variant='h5' className='text-[#3B3B3B] ml-5'>
-                            {'>'}
-                        </Typography>
-
-                        <NavLink to={`/products/${currentProduct.id}`} className='text-[#3B3B3B] ml-5'>
-                            <Typography variant='h5' className='text-[#3B3B3B]'>
-                                {currentProduct.reference}
-                            </Typography>
-                        </NavLink> 
+                         
                     </div>
 
                     <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center'
