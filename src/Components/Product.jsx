@@ -35,11 +35,11 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row w-[98vw]'>
+        <div className=' flex flex-row w-[98vw] h-[100vh]'>
 
             { /* OTHERs PRODUCTS NAME */ }
 
-              <div className='flex flex-col text-black-900 lg:w-[17vw] p-3 border-r-3 border-black-900 mt-3.5 mb-3.5 '>
+              <div className='flex flex-col text-black-900 lg:w-[17vw] p-3 border-r-3 border-black-900 mt-3.5 mb-3.5  overflow-y-scroll'>
 
                   <Typography variant='h5' className=' pl-3 text-[#3B3B3B]' sx={{fontWeight:"bold"}}>
                     Others Products
@@ -60,70 +60,91 @@ export default function Product() {
 
             {/* PRODUCT DETAILS */ }
 
-                <div className='w-[100%] h-[90vh] p-3 mt-3.5 mb-3.5 flex flex-row justify-center items-center '>
+                <div className='w-[100%] h-[90vh] p-3 mt-3.5 gap-5 mb-3.5 flex flex-col justify-center items-center '>
+
+                    <div className='self-start ml-10 flex flex-row'>
+                        <NavLink to='/products' className='text-[#3B3B3B]'>
+                            <Typography variant='h5' className='text-[#3B3B3B] '>
+                                Products
+                            </Typography>
+                        </NavLink>
+                        
+                        <Typography variant='h5' className='text-[#3B3B3B] ml-5'>
+                            {'>'}
+                        </Typography>
+
+                        <NavLink to={`/products/${currentProduct.id}`} className='text-[#3B3B3B] ml-5'>
+                            <Typography variant='h5' className='text-[#3B3B3B]'>
+                                {currentProduct.reference}
+                            </Typography>
+                        </NavLink> 
+                    </div>
+
                     <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center'
                     style={{boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.5)'}}>
                               
-                      <div>
+                        <div>
 
-                            {loading ? (
-                                <Typography variant='h5' className='text-center text-[#3B3B3B]'>
-                                    Loading...
+                                {loading ? (
+                                    <Typography variant='h5' className='text-center text-[#3B3B3B]'>
+                                        Loading...
+                                    </Typography>
+                                ) : (
+                                <div className='flex flex-col gap-1'>
+
+
+                                    <div className='border-3 border-black product-image-container rounded-md'>
+                                        <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
+                                        className='rounded-md'></img>
+                                    </div>
+
+
+                                    <div className='flex flex-row justify-start gap-2 w-[80%]'>
+                                        <div className='w-[80px] h-[80px] border-2 border-black rounded-sm product-image-container' style={{cursor: 'pointer'}}>
+                                            <img className='w-[80px] h-[78px] rounded-sm' src={`../public/DB/${id}/productPage.png`} alt="product page picture" onClick={() => {
+                                                setCurrentPicture('productPage.png');
+                                            }}/>
+                                        </div>
+                                        {currentProductArrayOfPictures.map((picture, index) => ( 
+                                        <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
+                                            setCurrentPicture(`${index + 1}.jpg`)
+                                        }} className='w-[80px] h-[80px] border-3 border-black rounded-sm product-image-container'>
+                                            <img src={picture} alt={`Product ${picture}`} className='.product-image-containerrounded-sm'
+                                            />
+                                        </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                )}
+
+                        </div>
+
+                            <div className='border-1 border-black w-[1px] mx-3'></div>
+
+                        <div className='flex flex-col gap-2 justify-center'>
+                                <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
+                                    {currentProduct.name}
                                 </Typography>
-                            ) : (
-                            <div className='flex flex-col gap-1'>
+                                <Typography variant='h6' className='text-[#3B3B3B]'>
+                                    {currentProduct.article}
+                                </Typography>
+                                <Typography variant='h6' className='text-[#3B3B3B]'>
+                                    Reference : {currentProduct.reference}
+                                </Typography>
+                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                    Category: {currentProduct.Category}
+                                </Typography>
+                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                    Serie: {currentProduct.series}
+                                </Typography>
+                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                    Color: {currentProduct.color}
+                                </Typography>
+                        </div>
 
+                     </div>
 
-                                <div className='border-3 border-black product-image-container rounded-md'>
-                                    <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
-                                    className='rounded-md'></img>
-                                </div>
-
-
-                                <div className='flex flex-row justify-start gap-2 w-[80%]'>
-                                    <div className='w-[80px] h-[80px] border-2 border-black rounded-sm product-image-container' style={{cursor: 'pointer'}}>
-                                        <img className='w-[80px] h-[78px] rounded-sm' src={`../public/DB/${id}/productPage.png`} alt="product page picture" onClick={() => {
-                                            setCurrentPicture('productPage.png');
-                                        }}/>
-                                    </div>
-                                    {currentProductArrayOfPictures.map((picture, index) => ( 
-                                    <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
-                                        setCurrentPicture(`${index + 1}.jpg`)
-                                    }} className='w-[80px] h-[80px] border-3 border-black rounded-sm product-image-container'>
-                                        <img src={picture} alt={`Product ${picture}`} className='.product-image-containerrounded-sm'
-                                        />
-                                    </div>
-                                    ))}
-                                </div>
-                            </div>
-                            )}
-
-                      </div>
-
-
-                      <div className='flex flex-col gap-2 justify-center'>
-                            <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
-                                {currentProduct.name}
-                            </Typography>
-                            <Typography variant='h6' className='text-[#3B3B3B]'>
-                                {currentProduct.article}
-                            </Typography>
-                            <Typography variant='h6' className='text-[#3B3B3B]'>
-                                {currentProduct.reference}
-                            </Typography>
-                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                Category: {currentProduct.category}
-                            </Typography>
-                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                Serie: {currentProduct.series}
-                            </Typography>
-                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                Color: {currentProduct.color}
-                            </Typography>
-                      </div>
-
-                     </div>   
-                    </div>  
+                </div>  
 
             {/* PRODUCT DETAILS */ }         
 
