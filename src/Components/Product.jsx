@@ -60,41 +60,70 @@ export default function Product() {
 
             {/* PRODUCT DETAILS */ }
 
-                <div className='w-[100%] p-3 mt-3.5 mb-3.5' >
+                <div className='w-[100%] h-[90vh] p-3 mt-3.5 mb-3.5 flex flex-row justify-center items-center '>
+                    <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center'
+                    style={{boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.5)'}}>
+                              
+                      <div>
 
-                    {loading ? (
-                        <Typography variant='h5' className='text-center text-[#3B3B3B]'>
-                            Loading...
-                        </Typography>
-                    ) : (
-                      <div className='flex flex-col gap-1'>
-
-
-                        <div className='border-3 border-black w-[22%] rounded-md'>
-                              <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
-                              className='w-[100%] h-[370px] rounded-md'></img>
-                        </div>
+                            {loading ? (
+                                <Typography variant='h5' className='text-center text-[#3B3B3B]'>
+                                    Loading...
+                                </Typography>
+                            ) : (
+                            <div className='flex flex-col gap-1'>
 
 
-                        <div className='flex flex-row justify-start gap-2 w-[24%]'>
-                            <div className='w-[70px] h-[72px] border-2 border-black rounded-sm' style={{cursor: 'pointer'}}>
-                                <img className='w-[70px] h-[70px] rounded-sm' src={`../public/DB/${id}/productPage.png`} alt="product page picture" onClick={() => {
-                                    setCurrentPicture('productPage.png');
-                                }}/>
+                                <div className='border-3 border-black product-image-container rounded-md'>
+                                    <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
+                                    className='rounded-md'></img>
+                                </div>
+
+
+                                <div className='flex flex-row justify-start gap-2 w-[80%]'>
+                                    <div className='w-[80px] h-[80px] border-2 border-black rounded-sm product-image-container' style={{cursor: 'pointer'}}>
+                                        <img className='w-[80px] h-[78px] rounded-sm' src={`../public/DB/${id}/productPage.png`} alt="product page picture" onClick={() => {
+                                            setCurrentPicture('productPage.png');
+                                        }}/>
+                                    </div>
+                                    {currentProductArrayOfPictures.map((picture, index) => ( 
+                                    <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
+                                        setCurrentPicture(`${index + 1}.jpg`)
+                                    }} className='w-[80px] h-[80px] border-3 border-black rounded-sm product-image-container'>
+                                        <img src={picture} alt={`Product ${picture}`} className='.product-image-containerrounded-sm'
+                                        />
+                                    </div>
+                                    ))}
+                                </div>
                             </div>
-                            {currentProductArrayOfPictures.map((picture, index) => ( 
-                              <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
-                                setCurrentPicture(`${index + 1}.jpg`)
-                              }} className='w-[70px] h-[72px] border-2 border-black rounded-sm'>
-                                <img src={picture} alt={`Product ${picture}`} className='w-[70px] h-[70px] rounded-sm'
-                                />
-                              </div>
-                            ))}
-                        </div>
+                            )}
+
                       </div>
-                    )}
-                      
-                </div>  
+
+
+                      <div className='flex flex-col gap-2 justify-center'>
+                            <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
+                                {currentProduct.name}
+                            </Typography>
+                            <Typography variant='h6' className='text-[#3B3B3B]'>
+                                {currentProduct.article}
+                            </Typography>
+                            <Typography variant='h6' className='text-[#3B3B3B]'>
+                                {currentProduct.reference}
+                            </Typography>
+                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                Category: {currentProduct.category}
+                            </Typography>
+                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                Serie: {currentProduct.series}
+                            </Typography>
+                            <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                Color: {currentProduct.color}
+                            </Typography>
+                      </div>
+
+                     </div>   
+                    </div>  
 
             {/* PRODUCT DETAILS */ }         
 
