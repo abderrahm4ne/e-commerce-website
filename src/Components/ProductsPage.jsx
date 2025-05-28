@@ -113,7 +113,7 @@ export default function ProductsPage() {
                             </Typography>
                         ) : (
                             myProducts.map(product => (
-                                <NavLink to={`/products/${product.id}`} key={product.id} style={{textDecoration:"none", border:"1px solid #3f3f31"}} className={"w-[100%] h-[380px] rounded-lg transition duration-300 ease-in-out hover:border-8 hover:shadow-lg"}>
+                                <NavLink to={`/products/${product.id}`} key={product.id} className={""}>
                                         <ProductBox product={product} />
                                 </NavLink>
                             ))

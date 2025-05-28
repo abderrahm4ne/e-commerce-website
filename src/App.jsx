@@ -22,7 +22,7 @@ function App() {
   {/*==== MATERIAL UI ====*/}
   const theme = createTheme({
     typography: {
-      fontFamily: 'Oswald',
+      
     },
   });
   {/*==== MATERIAL UI ====*/}
