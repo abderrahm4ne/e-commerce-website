@@ -62,9 +62,22 @@ export default function Product() {
 
                 <div className='w-[100%] h-[90vh] p-3 mt-3.5 gap-5 mb-3.5 flex flex-col justify-center items-center '>
 
-                    <div className='self-start ml-10 flex flex-row'>
-                         
-                    </div>
+
+                      <div className='self-start ml-3 flex flex-row gap-2' >
+                        <NavLink to='/products' className='text-[#3B3B3B]'>
+                            <Typography variant='h5' className='text-[#3B3B3B]'>
+                                Product
+                            </Typography>
+                        </NavLink>
+                        <Typography variant='h5' className='text-[#3B3B3B]'>
+                            {'>'}
+                        </Typography>
+                        <NavLink to={`/products/${id}`} className='text-[#3B3B3B]'>
+                            <Typography variant='h5' className='text-[#3B3B3B]'>
+                                {currentProduct.reference}
+                            </Typography>
+                        </NavLink>
+                      </div>
 
                     <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center'
                     style={{boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.5)'}}>
@@ -94,7 +107,7 @@ export default function Product() {
                                         {currentProductArrayOfPictures.map((picture, index) => ( 
                                         <div key={index} style={{cursor: 'pointer'}} onClick={ ()=> {
                                             setCurrentPicture(`${index + 1}.jpg`)
-                                        }} className='w-[80px] h-[80px] border-3 border-black rounded-sm product-image-container'>
+                                        }} className='w-[80px] h-[80px] border-2 border-black rounded-sm product-image-container'>
                                             <img src={picture} alt={`Product ${picture}`} className='.product-image-containerrounded-sm'
                                             />
                                         </div>
@@ -105,7 +118,7 @@ export default function Product() {
 
                         </div>
 
-                            <div className='border-1 border-black w-[1px] mx-3'></div>
+                        <div className='border-1 border-black w-[1px] mx-3'></div>
 
                         <div className='flex flex-col gap-2 justify-center'>
                                 <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
