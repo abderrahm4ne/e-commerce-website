@@ -59,21 +59,27 @@ export default function Product() {
 
 
             {/* PRODUCT DETAILS */ }
+            <div className='flex flex-col w-[100%] h-[90vh]'>
 
-                <div className='w-[100%] h-[90vh] p-3 mt-3.5 gap-5 mb-3.5 flex flex-col justify-center items-center '>
+                <div className='self-start p-4'>
+                    <Typography variant='h3' className='text-[#3B3B3B] font-bold text-center mt-5 mb-5 '>
+                        Product Details
+                    </Typography>
+                </div>
+                <div className='w-[100%] p-3 mt-3.5 gap-15 mb-3.5 flex flex-col justify-center items-center '>
 
 
-                      <div className='self-start ml-3 flex flex-row gap-2' >
-                        <NavLink to='/products' className='text-[#3B3B3B]'>
-                            <Typography variant='h5' className='text-[#3B3B3B]'>
+                      <div className='self-start ml-10 flex flex-row gap-4 ' >
+                        <NavLink to='/products' className='text-[#3B3B3B] '>
+                            <Typography variant='h7' className='text-[#3B3B3B]'>
                                 Product
                             </Typography>
                         </NavLink>
-                        <Typography variant='h5' className='text-[#3B3B3B]'>
+                        <Typography variant='h7' className='text-[#3B3B3B] '>
                             {'>'}
                         </Typography>
                         <NavLink to={`/products/${id}`} className='text-[#3B3B3B]'>
-                            <Typography variant='h5' className='text-[#3B3B3B]'>
+                            <Typography variant='h7' className='text-[#3B3B3B]'>
                                 {currentProduct.reference}
                             </Typography>
                         </NavLink>
@@ -144,6 +150,7 @@ export default function Product() {
                      </div>
 
                 </div>  
+            </div>
 
             {/* PRODUCT DETAILS */ }         
 
