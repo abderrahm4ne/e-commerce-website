@@ -35,7 +35,7 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row w-[98vw] h-[100vh]'>
+        <div className=' flex flex-row w-[98vw] h-[100vh]' style={{backgroundImage: "linear-gradient(90deg, #9f9f9f, #ffd7d7 60%)"}}>
 
             { /* OTHERs PRODUCTS NAME */ }
 
@@ -61,7 +61,7 @@ export default function Product() {
             {/* PRODUCT DETAILS */ }
             <div className='flex flex-col w-[100%] h-[90vh]'>
 
-                <div className='self-start p-4'>
+                <div className='self-start pt-4 pl-4'>
                     <Typography variant='h3' className='text-[#3B3B3B] font-bold text-center mt-5 mb-5 '>
                         Product Details
                     </Typography>
@@ -85,7 +85,7 @@ export default function Product() {
                         </NavLink>
                       </div>
 
-                    <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center'
+                    <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center bg-white'
                     style={{boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.5)'}}>
                               
                         <div>

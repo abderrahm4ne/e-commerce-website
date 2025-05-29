@@ -2,8 +2,9 @@ import ProductsPage from "../Components/ProductsPage";
 
 export default function ProductsPageRouter() { 
     return (
-        <div style={{backgrundImage: "linear-gradient(120deg, #fbf2f2, #3B3B3B 60%)",
-            padding:"20px"}} className=" p-10">
+        <div style={{
+                backgroundImage: "linear-gradient(90deg, #9f9f9f, #ffd7d7 60%)", padding:"20px"
+              }} className=" p-10">
             <ProductsPage />
         </div>     
     )
