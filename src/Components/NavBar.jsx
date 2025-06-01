@@ -2,9 +2,8 @@
 import { useEffect } from 'react';
 
 // MUI 
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 // ROUTER
@@ -43,7 +42,9 @@ export default function NavBar() {
 
                 </div>
 
-                
+                <div>
+                    <ShoppingCartIcon sx={{color:"#3b3b3b", fontSize:"30px"}}/>
+                </div>
                 
             </div>
             

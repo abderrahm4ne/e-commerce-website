@@ -85,7 +85,7 @@ export default function Product() {
                         </NavLink>
                       </div>
 
-                    <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center bg-white'
+                    <div className='border-3 border-black p-7 rounded-md w-[60%] flex flex-row gap-3 justify-center     '
                     style={{boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.5)'}}>
                               
                         <div>
