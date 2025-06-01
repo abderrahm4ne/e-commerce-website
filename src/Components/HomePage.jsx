@@ -14,11 +14,11 @@ export default function HomePage() {
             <Typography variant="h3" gutterBottom={false} style={{padding:"10px", fontWeight:"bold", color:"#3B3B3B", fontFamily:"Oswald"}}>
                 ORDER YOUR PRODUCTS NOW!
             </Typography>
-            <Typography variant="h5"  gutterBottom={false} style={{marginLeft:"30px", marginBottom:"35px", color:"orange", fontFamily:"Oswald"}}>
+            <Typography variant="h5"  gutterBottom={false} style={{marginLeft:"30px", marginBottom:"35px", color:"#CD7F32", fontFamily:"Oswald"}}>
                 Discover amazing products and deals in Our Algerian store..!
             </Typography>
             <NavLink width="100%" to="/products" style={{textDecoration:"none"}}>
-                <Button variant="contained" sx={{backgroundColor:"#3B3B3B", fontSize:"2rem", fontFamily:"Oswald", color:"orange", marginLeft:"10px", padding:"12px 20px ", width:"150%"}}>SEARCH TO ORDER</Button>
+                <Button variant="contained" sx={{backgroundColor:"#3B3B3B", fontSize:"2rem", fontFamily:"Oswald", color:"#CD7F32", marginLeft:"10px", padding:"12px 20px ", width:"150%"}}>SEARCH TO ORDER</Button>
             </NavLink>
             
 

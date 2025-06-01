@@ -35,7 +35,7 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row w-[98vw] h-[100vh]' style={{backgroundImage: "linear-gradient(90deg, #9f9f9f, #ffd7d7 60%)"}}>
+        <div className=' flex flex-row w-[98vw] h-[100vh]'>
 
             { /* OTHERs PRODUCTS NAME */ }
 
@@ -71,15 +71,15 @@ export default function Product() {
 
                       <div className='self-start ml-10 flex flex-row gap-4 ' >
                         <NavLink to='/products' className='text-[#3B3B3B] '>
-                            <Typography variant='h7' className='text-[#3B3B3B]'>
+                            <Typography variant='h6' className='text-[#3B3B3B]' sx={{fontWeight:"bold"}}>
                                 Product
                             </Typography>
                         </NavLink>
-                        <Typography variant='h7' className='text-[#3B3B3B] '>
+                        <Typography variant='h6' className='text-[#3B3B3B] '>
                             {'>'}
                         </Typography>
                         <NavLink to={`/products/${id}`} className='text-[#3B3B3B]'>
-                            <Typography variant='h7' className='text-[#3B3B3B]'>
+                            <Typography variant='h6' className='text-[#3B3B3B]' sx={{fontWeight:"bold"}}>
                                 {currentProduct.reference}
                             </Typography>
                         </NavLink>
@@ -125,26 +125,33 @@ export default function Product() {
                         </div>
 
                         <div className='border-1 border-black w-[1px] mx-3'></div>
+                            
+                        <div className='flex flex-col justify-around'>
 
-                        <div className='flex flex-col gap-2 justify-center'>
-                                <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
-                                    {currentProduct.name}
-                                </Typography>
-                                <Typography variant='h6' className='text-[#3B3B3B]'>
-                                    {currentProduct.article}
-                                </Typography>
-                                <Typography variant='h6' className='text-[#3B3B3B]'>
-                                    Reference : {currentProduct.reference}
-                                </Typography>
-                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                    Category: {currentProduct.Category}
-                                </Typography>
-                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                    Serie: {currentProduct.series}
-                                </Typography>
-                                <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
-                                    Color: {currentProduct.color}
-                                </Typography>
+                            <div className='flex flex-col gap-2 justify-center h-[60%]'>
+                                    <Typography variant='h4' className='text-[#3B3B3B] font-bold'>
+                                        {currentProduct.name}
+                                    </Typography>
+                                    <Typography variant='h6' className='text-[#3B3B3B]'>
+                                        {currentProduct.article}
+                                    </Typography>
+                                    <Typography variant='h6' className='text-[#3B3B3B]'>
+                                        Reference : {currentProduct.reference}
+                                    </Typography>
+                                    <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                        Category: {currentProduct.Category}
+                                    </Typography>
+                                    <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                        Serie: {currentProduct.series}
+                                    </Typography>
+                                    <Typography variant='h5' className='text-[#3B3B3B] font-bold'>
+                                        Color: {currentProduct.color}
+                                    </Typography>
+                            </div>
+                            
+                            <button className='bg-[#3B3B3B] text-white px-4 py-4 rounded-md mt-4 hover:bg-[#2c2c2c] transition duration-300' style={{cursor: 'pointer', fontSize:'2rem'}}>
+                                Add to Cart
+                            </button>
                         </div>
 
                      </div>
