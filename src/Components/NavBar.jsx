@@ -75,7 +75,7 @@ export default function NavBar() {
                 <Outlet />                
 
             {/*==== FOOTER ====*/}
-            <div className='bg-[#161616] flex flex-col p-1.5 justify-center items-center text-[#dbdbdb]'>
+            <div className='bg-[#161616] flex flex-col p-3.5 justify-center items-center text-[#dbdbdb]'>
 
                     <Typography variant="h7" gutterBottom={false}>
                         @2025 IMEX.SH. All rights reserved.

@@ -4,7 +4,7 @@ export default function HomePageRouter() {
 
     return(
             <div 
-              className="flex flex-row gap-10 justify-center-safe w-[100%] p-10 h-[95vh]">
+              className="flex flex-row gap-10 justify-center-safe w-[100%] h-[92vh] pl-4 pr-4">
 
                     <HomePage />
                     
