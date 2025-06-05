@@ -32,7 +32,7 @@ export default function HomePage() {
                 }}
                 className='text-[1.2rem] lg:text-[1.7rem] md:text-[1.5rem] sm:text=[1.2rem]'
                 >
-                    ORDER NOW
+            VIEW PRODUCTS
 
                 </button>
             </NavLink>
