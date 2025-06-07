@@ -16,20 +16,26 @@ export function ProductBox({ product }) {
 
 
       <div className="flex flex-col items-center justify-center gap-3 ">
+        
         <div 
-          className="h-auto break-words p-2 w-full 2xl:text-2xl xl:text-xl lg:text-sm md:text-sm sm:text-sm text-sm bg-yellow-200"
+          className="h-auto break-words p-2 w-full 2xl:text-2xl xl:text-xl  lg:text-xl md:text-xl sm:text-md text-xl "
           style={{ fontFamily: "Oswald", color: "#3B3B3B", textAlign: "center" }}
         >
           {product.name}
 
         </div>
 
-        <div className="h-auto 2xl:text-2xl xl:text-xl  lg:text-sm md:text-sm sm:text-sm text-sm "
+        <div className="h-auto 2xl:text-3xl xl:text-xl  lg:text-xl md:text-xl sm:text-md text-xl "
         style={{ fontFamily: "Oswald", color: "#CD7F32", textAlign: "center" }}>
           Price : 123444DZD
         </div>
 
       </div>
+
+      <button
+        className="w-full bg-[#3B3B3B] text-[#dbdbdb] py-4 text-2xl mt-4 rounded-lg 2xl:text-2xl xl:text-2xl md:text-md sm:text-sm sm:text-md">
+          ADD TO CART
+        </button>
     </div>
   );
 }
