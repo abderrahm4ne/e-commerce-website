@@ -18,8 +18,11 @@ export default function Product() {
 
     // CONTEXT
     const { myProducts , loading} = useContext(ProductContext);
+    
     const { id } = useParams();
 
+    const [ smallScreen, setSmallScreen] = useState(false);
+ 
     const [ currentPicture, setCurrentPicture ] = useState('productPage.png');
 
     const currentProduct = myProducts.find(product => product.id === id);
@@ -38,8 +41,9 @@ export default function Product() {
         <div className=' flex flex-row w-[98vw] h-[100vh]'>
 
             { /* OTHERs PRODUCTS NAME */ }
-
-              <div className='flex flex-col text-black-900 lg:w-[17vw] p-3 border-r-3 border-black-900 mt-3.5 mb-3.5  overflow-y-scroll'>
+        {   
+            !smallScreen && (
+                <div className='flex flex-col text-black-900 lg:w-[17vw] p-3 border-r-3 border-black-900 mt-3.5 mb-3.5  overflow-y-scroll'>
 
                   <Typography variant='h5' className=' pl-3 text-[#3B3B3B]' sx={{fontWeight:"bold"}}>
                     Others Products
@@ -53,7 +57,7 @@ export default function Product() {
                       ))}
                   </div>
               </div>
-              
+            )}     
             {/* OTHERs PRODUCTS NAME */ }
 
 
