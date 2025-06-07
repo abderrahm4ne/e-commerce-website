@@ -57,7 +57,7 @@ export default function ProductsPage() {
     return (
         <div className='flex flex-col gap-10'>          
             
-            <div className='flex flex-col items-start pl-20 gap-7'>
+            <div className='flex flex-col items-start gap-7'>
                 
                 <Typography variant="h3" gutterBottom={false} sx={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center", textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} className=''>
                     OUR PRODUCTS
@@ -106,7 +106,7 @@ export default function ProductsPage() {
          */}
 
             <div className='flex flex-col items-center gap-2'>
-                    <div className='grid grid-cols-4 md:grid-cols-4 sm:grid-cols-3 gap-4 w-[80%]'>
+                    <div className='grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4 w-[80%]'>
                         {loading ? (
                             <Typography variant="h1" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center"}}> 
                                 Loading Products...
