@@ -60,21 +60,20 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row w-[98vw] h-[100vh] bg-amber-100'>
+        <div className=' flex flex-row h-[100vh]'>
 
             
             { /* OTHERs PRODUCTS NAME */ }
             
             
-                
             {smallScreen && (
-                <div className=' flex flex-col text-black-900 w-[17vw] h-full p-3 border-r-3 border-black-900 overflow-y-scroll'>
+                <div className={`flex flex-col text-black-900 w-[17vw] h-full p-3 border-r-3 border-black-900 overflow-y-scroll`}>
                   
-                  <div className='font-bold text-3xl pl-8 text-[#3B3B3B] bg-amber-800 h-[10%]' style={{fontFamily: 'Oswald'}}>
+                  <div className='font-bold text-3xl pl-8 text-[#3B3B3B] h-[10%]' style={{fontFamily: 'Oswald'}}>
                     Other Products
                   </div>
 
-                  <div className='flex flex-col justify-center bg-amber-900 p-4' style={{fontFamily: 'Oswald'}}>
+                  <div className='flex flex-col justify-center p-4' style={{fontFamily: 'Oswald'}}>
                       {myProducts.map((product) => (
                           <NavLink to={`/products/${product.id}`} key={product.id} className='p-3' >
                               <Typography variant='h7' sx={{color:"#3B3B3B", fontWeight:"bold"}}>
@@ -114,6 +113,63 @@ export default function Product() {
 
             {/* PRODUCT DETAILS */ }
             
+            <div className='p-3 w-full flex flex-col h-full gap-3'>
+
+                <div className='flex flex-row items-baseline p-3 gap-2.5'>
+                    
+                    <NavLink to={`../`} className=''>
+                    <span className='text-[#3B3B3B] font-bold text-md'> HOME</span>
+                    </NavLink> 
+                    
+                    <div className='text-xl font-bold'>
+                       {' > '}
+                    </div>
+
+                    <NavLink to={`/products/`} className='font-bold'>
+                            <span className='text-[#3B3B3B] font-bold text-md'> PRODUCTS</span>
+                    </NavLink>
+                    <div className='text-xl font-bold'>
+                        {' > '}
+                    </div>
+
+                    <NavLink to={`/products/${currentProduct.id}`} className=''>
+                        <span className='text-[#3B3B3B] font-bold text-md'> {(currentProduct.name).toUpperCase()}</span>
+                    </NavLink>
+                        
+                </div>
+
+                <div className='border-1 border-black p-3 flex flex-row rounded-xl'>
+
+                    <div className='border-black rounded-md flex flex-col '>
+                            
+                            <div className='product-image-container border-1 border-black rounded-md'>
+                                <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
+                            className='rounded-md w-[380px] h-[380px]'></img>
+                            </div>
+
+                                <div className='flex flex-row gap-2 mt-3'>
+
+                                    <img src={`../public/DB/${id}/productPage.png`}
+                                    alt="product page picture"  
+                                    className='w-[80px] h-[80px] rounded-md border-1 border-black cursor-pointer' />
+
+                                    {currentProductArrayOfPictures.map((picture, index) => (
+                                        <img 
+                                            key={index} 
+                                            src={picture} 
+                                            alt={`product-${index + 1}`} 
+                                            className='w-[80px] h-[80px] rounded-md cursor-pointer border-1 border-black'
+                                            onClick={() => setCurrentPicture(`${index + 1}.jpg`)}
+                                        />
+                                    ))}
+                                </div>
+                    </div>
+                    
+                    
+
+                </div>
+
+            </div>
 
             {/* PRODUCT DETAILS */ }         
 

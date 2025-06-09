@@ -30,7 +30,7 @@ export default function HomePage() {
                 color: "#CD7F32",
                 padding: "10px",
                 }}
-                className='text-[1.2rem] lg:text-[1.7rem] md:text-[1.5rem] sm:text=[1.2rem]'
+                className='text-[1.2rem] lg:text-[1.7rem] md:text-[1.5rem] sm:text=[1.2rem] hover:cursor-pointer'
                 >
             VIEW PRODUCTS
 
