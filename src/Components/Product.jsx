@@ -38,21 +38,6 @@ export default function Product() {
   
     const currentProductArrayOfPictures = [1 , 2, 3, 4].map(num => `../public/DB/${id}/${num}.jpg`);
 
-    const style = {
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: 400,
-                    bgcolor: '#dfdfdf',
-                    border: '1px solid #000000',
-                    boxShadow: 24,
-                    borderRadius: '8px',
-                    p: 4,
-                    };
-
-    
-
         const handleSwitch = () => {
             setSmallScreen(!smallScreen);
         }
@@ -60,7 +45,7 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row h-[100vh]'>
+        <div className=' flex flex-row'>
 
             
             { /* OTHERs PRODUCTS NAME */ }
@@ -142,7 +127,7 @@ export default function Product() {
 
             { /*---PATH---*/ }
 
-                <div className='flex flex-row w-full border-1 border-black p-3 gap-3'>
+                <div className='flex flex-row w-full border-1 border-black p-3 gap-3 rounded-md'>
 
                 { /* PRODUCT PICTURES */ }
 
@@ -223,10 +208,35 @@ export default function Product() {
                 </div>
 
 
-                <div>
+                <div className='flex flex-col gap-3'>
+                     
                      <div className='text-3xl' style={{fontFamily: 'Oswald'}}>
                         SAME CATEGORY PRODUCTS : 
                      </div>
+
+                     <div className='flex flex-row flex-wrap gap-3 p-3'>
+                        {myProducts
+                            .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
+                            .map(product  => (
+                                <NavLink to={`/products/${product.id}`} key={product.id} className='p-3'>
+                                    <div className='w-[300px] h-[300px] border-1 border-black rounded-md flex flex-col items-center justify-center hover:scale-105 transition duration-300 cursor-pointer '>
+                                        
+                                        <div className='product-image-container'>
+                                            <img src={`../public/DB/${product.id}/productPage.png`} alt={product.name} className='w-full h-full object-cover rounded-md' />
+                                        </div>
+                                        
+
+                                        <div>
+
+                                        </div>
+
+                                    </div>
+                                </NavLink>
+                            ))
+                        }
+                     </div>
+
+
                 </div>
                                 
             </div>
