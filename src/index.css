@@ -2,7 +2,6 @@
 
 
 .product-image-container {
-  width: 100%; /* Or set a fixed width, like 300px */
   aspect-ratio: 1 / 1; /* or 1 / 1 for square */
   overflow: hidden;
   position: relative;

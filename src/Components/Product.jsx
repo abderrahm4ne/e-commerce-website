@@ -113,7 +113,9 @@ export default function Product() {
 
             {/* PRODUCT DETAILS */ }
             
-            <div className='p-3 w-full flex flex-col h-full gap-3'>
+            <div className='p-3 w-full flex flex-col h-full gap-5'>
+
+            { /* PATH */ }
 
                 <div className='flex flex-row items-baseline p-3 gap-2.5'>
                     
@@ -138,19 +140,22 @@ export default function Product() {
                         
                 </div>
 
-                <div className='border-1 border-black p-3 flex flex-row rounded-xl'>
+            { /*---PATH---*/ }
 
-                    <div className='border-black rounded-md flex flex-col '>
+                <div className='flex flex-row w-full border-1 border-black p-3 gap-3'>
+
+                { /* PRODUCT PICTURES */ }
+
+                    <div className='border-black flex flex-col'>
                             
-                            <div className='product-image-container border-1 border-black rounded-md'>
-                                <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}
-                            className='rounded-md w-[380px] h-[380px]'></img>
+                            <div className='product-image-container border-1 border-black rounded-md w-[100%] h-[100%]'>
+                                <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}></img>
                             </div>
 
-                                <div className='flex flex-row gap-2 mt-3'>
+                                <div className='flex flex-row flex-wrap gap-2 mt-3 '>
 
                                     <img src={`../public/DB/${id}/productPage.png`}
-                                    alt="product page picture"  
+                                    alt="product page picture img"  
                                     className='w-[80px] h-[80px] rounded-md border-1 border-black cursor-pointer' />
 
                                     {currentProductArrayOfPictures.map((picture, index) => (
@@ -158,20 +163,76 @@ export default function Product() {
                                             key={index} 
                                             src={picture} 
                                             alt={`product-${index + 1}`} 
-                                            className='w-[80px] h-[80px] rounded-md cursor-pointer border-1 border-black'
+                                            className='w-[80px] h-[80px] rounded-md cursor-pointer border-1 border-black img'
                                             onClick={() => setCurrentPicture(`${index + 1}.jpg`)}
                                         />
                                     ))}
                                 </div>
                     </div>
-                    
-                    
 
+                { /*---- PRODUCT PICTURES ----*/ }
+
+                                    <div className='w-[1px] h-[100%] bg-black mx-4' />
+            
+                { /* PRODUCT INFOS */ }
+
+
+                    <div className='flex flex-col justify-between px-3 py-7 w-full h-full' >
+                        <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}} >
+                            <div className='lg:text-3xl md:text:xl text-md p-3'>
+                                {(currentProduct.name).toUpperCase()}
+                            </div>
+                            
+                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                              ARTICLE : {currentProduct.article}
+                            </div>
+
+                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                                REFERENCE : {currentProduct.reference}
+                            </div>
+
+                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                                SERIES : {(currentProduct.series).toUpperCase()}
+                            </div>
+
+                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                                COLOR : {(currentProduct.color).toUpperCase()}
+                            </div>
+                        </div>
+                        
+                        <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}}>
+                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                                PRICE : 130 €
+                            </div>
+
+                            <button className='bg-[#3B3B3B] text-white text-2xl px-4 py-6 rounded-md w-[40%] hover:bg-[#2c2c2c] transition duration-300 hover:cursor-pointer'
+                            onClick={() => alert('Product added to cart!')}
+                            >
+                                ADD TO CART
+                            </button>
+                            
+                        </div>
+                        
+                    </div> 
+
+
+                { /*---- PRODUCT INFOS ----*/ }
+                
+                
+                
                 </div>
 
+
+                <div>
+                     <div className='text-3xl' style={{fontFamily: 'Oswald'}}>
+                        SAME CATEGORY PRODUCTS : 
+                     </div>
+                </div>
+                                
             </div>
 
-            {/* PRODUCT DETAILS */ }         
+            {/* PRODUCT DETAILS */ }
+
 
         </div>
           
