@@ -214,11 +214,11 @@ export default function Product() {
                         SAME CATEGORY PRODUCTS : 
                      </div>
 
-                     <div className='flex flex-row flex-wrap gap-3 p-3'>
+                     <div className='flex flex-row flex-wrap gap-10 p-3'>
                         {myProducts
                             .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
                             .map(product  => (
-                                <NavLink to={`/products/${product.id}`} key={product.id} className='p-3'>
+                                <NavLink to={`/products/${product.id}`} key={product.id} className=''>
                                                               
                                 <div className="flex flex-col items-center rounded-lg border-1 transition duration-300 ease-in-out hover:border-2 hover:scale-105 hover:shadow-lg p-3 w-[300px] min-h-[440px] h-auto" >
                                         
