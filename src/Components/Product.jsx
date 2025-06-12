@@ -127,30 +127,42 @@ export default function Product() {
 
             { /*---PATH---*/ }
 
-                <div className='flex flex-row w-full h-full border-1 border-black p-3 gap-3 rounded-md '>
+
+
+
+            { /* PRODUCT PICTURES AND INFOS */ }
+
+
+
+                <div className='flex lg:flex-row md:flex-row flex-col w-full lg:h-full md:h-full border-1 border-black p-3 gap-3 rounded-md '>
 
                 { /* PRODUCT PICTURES */ }
 
-                    <div className='border-black flex flex-col h-full w-[30%]'>
+                    <div className='border-black flex flex-col h-full lg:w-[30%] md:w-[30%] w-full'>
                             
-                            <div className='product-image-container border-1 border-black rounded-md w-[100%] h-[100%]'>
+                            <div className='product-image-container border-1 border-black rounded-md lg:w-[100%] lg:h-[100%] md:h-[100%] md:w-[100%] h-[75%] w-[75%] self-center'>
                                 <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}></img>
                             </div>
 
-                                <div className='flex flex-row flex-wrap gap-2 mt-3 '>
+                                <div className='flex flex-row flex-wrap gap-2 mt-3 self-center justify-center'>
 
-                                    <img src={`../public/DB/${id}/productPage.png`}
-                                    alt="product page picture img"  
-                                    className='w-[80px] h-[80px] rounded-md border-1 border-black cursor-pointer' />
+                                    <div className='lg:w-[20%] md:w-[20%] w-[17%] aspect-square'>
+                                        <img 
+                                            src={`../public/DB/${id}/productPage.png`}
+                                            alt="product page picture img"  
+                                            className='w-full h-full object-cover rounded-md border border-black cursor-pointer'
+                                        />
+                                    </div>
 
                                     {currentProductArrayOfPictures.map((picture, index) => (
-                                        <img 
-                                            key={index} 
-                                            src={picture} 
-                                            alt={`product-${index + 1}`} 
-                                            className='w-[80px] h-[80px] rounded-md cursor-pointer border-1 border-black img'
-                                            onClick={() => setCurrentPicture(`${index + 1}.jpg`)}
-                                        />
+                                        <div className='lg:w-[20%] md:w-[20%] w-[17%] aspect-square' key={index}>
+                                            <img 
+                                                src={picture} 
+                                                alt={`product-${index + 1}`} 
+                                                className='w-full h-full object-cover rounded-md border border-black cursor-pointer'
+                                                onClick={() => setCurrentPicture(`${index + 1}.jpg`)}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                     </div>
@@ -203,7 +215,10 @@ export default function Product() {
 
                 { /*---- PRODUCT INFOS ----*/ }
                 
-                
+
+
+
+             { /* PRODUCT PICTURES AND INFOS */ }   
                 
                 </div>
 
