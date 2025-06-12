@@ -214,7 +214,7 @@ export default function Product() {
                         SAME CATEGORY PRODUCTS : 
                      </div>
 
-                     <div className='flex flex-row flex-wrap gap-10 p-3'>
+                     <div className='flex flex-row flex-wrap gap-x-10 gap-y-5 p-3'>
                         {myProducts
                             .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
                             .map(product  => (
