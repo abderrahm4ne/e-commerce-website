@@ -45,7 +45,7 @@ export default function Product() {
 
     return ( 
             
-        <div className=' flex flex-row'>
+        <div className='flex flex-row'>
 
             
             { /* OTHERs PRODUCTS NAME */ }
@@ -98,11 +98,11 @@ export default function Product() {
 
             {/* PRODUCT DETAILS */ }
             
-            <div className='p-3 w-full flex flex-col h-full gap-5'>
+            <div className='p-3 w-full flex flex-col h-full gap-5 '>
 
             { /* PATH */ }
 
-                <div className='flex flex-row items-baseline p-3 gap-2.5'>
+                <div className='flex flex-row items-baseline p-3 gap-2.5 '>
                     
                     <NavLink to={`../`} className=''>
                     <span className='text-[#3B3B3B] font-bold text-md'> HOME</span>
@@ -127,11 +127,11 @@ export default function Product() {
 
             { /*---PATH---*/ }
 
-                <div className='flex flex-row w-full border-1 border-black p-3 gap-3 rounded-md'>
+                <div className='flex flex-row w-full h-full border-1 border-black p-3 gap-3 rounded-md '>
 
                 { /* PRODUCT PICTURES */ }
 
-                    <div className='border-black flex flex-col'>
+                    <div className='border-black flex flex-col h-full w-[30%]'>
                             
                             <div className='product-image-container border-1 border-black rounded-md w-[100%] h-[100%]'>
                                 <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}></img>
@@ -157,12 +157,12 @@ export default function Product() {
 
                 { /*---- PRODUCT PICTURES ----*/ }
 
-                                    <div className='w-[1px] h-[100%] bg-black mx-4' />
+                   <div className='w-[1px] h-[full] bg-black border-1 border-black mx-4' />
             
                 { /* PRODUCT INFOS */ }
 
 
-                    <div className='flex flex-col justify-between px-3 py-7 w-full h-full' >
+                    <div className='flex flex-col justify-between px-3 py-7 w-full ' >
                         <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}} >
                             <div className='lg:text-3xl md:text:xl text-md p-3'>
                                 {(currentProduct.name).toUpperCase()}
@@ -185,7 +185,7 @@ export default function Product() {
                             </div>
                         </div>
                         
-                        <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}}>
+                        <div className='flex flex-col gap-2 mb-7' style={{fontFamily: 'Oswald'}}>
                             <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
                                 PRICE : 130 €
                             </div>
@@ -210,7 +210,7 @@ export default function Product() {
 
                 <div className='flex flex-col gap-3'>
                      
-                     <div className='text-3xl' style={{fontFamily: 'Oswald'}}>
+                     <div className='text-3xl px-3' style={{fontFamily: 'Oswald'}}>
                         SAME CATEGORY PRODUCTS : 
                      </div>
 
@@ -219,18 +219,29 @@ export default function Product() {
                             .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
                             .map(product  => (
                                 <NavLink to={`/products/${product.id}`} key={product.id} className='p-3'>
-                                    <div className='w-[300px] h-[300px] border-1 border-black rounded-md flex flex-col items-center justify-center hover:scale-105 transition duration-300 cursor-pointer '>
+                                                              
+                                <div className="flex flex-col items-center rounded-lg border-1 transition duration-300 ease-in-out hover:border-2 hover:scale-105 hover:shadow-lg p-3 w-[300px] min-h-[440px] h-auto" >
                                         
-                                        <div className='product-image-container'>
-                                            <img src={`../public/DB/${product.id}/productPage.png`} alt={product.name} className='w-full h-full object-cover rounded-md' />
+                                            <img 
+                                                src={`../public/DB/${product.id}/productPage.png`} 
+                                                alt={product.name} 
+                                                className="w-[250px] h-[250px] object-cover border-1 border-black rounded-md mb-2">
+                                            </img>
+
+                                        
+                                        
+                                        <div className='text-center text-xl mt-5' style={{fontFamily: 'Oswald'}}>
+                                                {(product.name).toUpperCase()}
+                                        </div>
+
+                                        <div className='text-center text-2xl mt-5' style={{fontFamily: 'Oswald'}}>
+                                                PRICE : 130 €
                                         </div>
                                         
+                                        
 
-                                        <div>
-
-                                        </div>
-
-                                    </div>
+                                </div>
+                                
                                 </NavLink>
                             ))
                         }
