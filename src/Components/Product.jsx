@@ -140,13 +140,13 @@ export default function Product() {
 
                     <div className='border-black flex flex-col h-full lg:w-[30%] md:w-[30%] w-full'>
                             
-                            <div className='product-image-container border-1 border-black rounded-md lg:w-[100%] lg:h-[100%] md:h-[100%] md:w-[100%] h-[75%] w-[75%] self-center'>
-                                <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name}></img>
+                            <div className='product-image-container border-1 border-black rounded-md lg:w-[100%] lg:h-[100%] md:h-[100%] md:w-[100%] h-[75%] w-[85%] self-center'>
+                                <img src={`../public/DB/${id}/${currentPicture}`} alt={currentProduct.name} />
                             </div>
 
                                 <div className='flex flex-row flex-wrap gap-2 mt-3 self-center justify-center'>
 
-                                    <div className='lg:w-[20%] md:w-[20%] w-[17%] aspect-square'>
+                                    <div className='lg:w-[20%] md:w-[20%] w-[18%] aspect-square'>
                                         <img 
                                             src={`../public/DB/${id}/productPage.png`}
                                             alt="product page picture img"  
@@ -169,36 +169,36 @@ export default function Product() {
 
                 { /*---- PRODUCT PICTURES ----*/ }
 
-                   <div className='w-[1px] h-[full] bg-black border-1 border-black mx-4' />
+                   <div className='lg:w-[1px] md:w-[1px] w-[100%] lg:h-full md:h-full h-[1px] bg-black lg:mx-4 md:mx-4 '/>
             
                 { /* PRODUCT INFOS */ }
 
 
-                    <div className='flex flex-col justify-between px-3 py-7 w-full ' >
+                    <div className='flex flex-col justify-between px-3 lg:py-7 md:py-7 sm:py-7 gap-5 w-full ' >
                         <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}} >
-                            <div className='lg:text-3xl md:text:xl text-md p-3'>
+                            <div className='lg:text-3xl md:text:3xl text-2xl px-3 pb-4 pt-1'>
                                 {(currentProduct.name).toUpperCase()}
                             </div>
                             
-                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
                               ARTICLE : {currentProduct.article}
                             </div>
 
-                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
                                 REFERENCE : {currentProduct.reference}
                             </div>
 
-                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
                                 SERIES : {(currentProduct.series).toUpperCase()}
                             </div>
 
-                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
                                 COLOR : {(currentProduct.color).toUpperCase()}
                             </div>
                         </div>
                         
                         <div className='flex flex-col gap-2 mb-7' style={{fontFamily: 'Oswald'}}>
-                            <div className='lg:text-2xl md:text:xl text-md px-3 py-0.5'>
+                            <div className='lg:text-3xl md:text:3xl text-2xl text-md px-3 py-0.5'>
                                 PRICE : 130 €
                             </div>
 
