@@ -3,6 +3,7 @@ import HomePageRouter from './Routers/HomePageRouter';
 import NavBarRouter from './Routers/NavBarRouter'; 
 import ProductsPageRouter from './Routers/ProductsPageRouter';
 import Product from './Components/Product';
+import ContactPage from './Components/ContactPage';
 
 // MUI
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -11,7 +12,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 
 // HOOKS
-import { useContext, useEffect, useState } from 'react';
 
 // ANOTHERS 
 import axios from 'axios';
@@ -37,9 +37,9 @@ function App() {
                           <HomePageRouter />
                     }/>
                     <Route path="products" element={ <ProductsPageRouter />}/>
-                    <Route path='/products/:id' element={<Product />} />
-                  { /*  <Route path="about" element={<AboutPage />} />
+                    <Route path='/products/:id' element={<Product />} />                   
                     <Route path="contact" element={<ContactPage />} />
+                  { /* <Route path="about" element={<AboutPage />} />
                     <Route path="cart" element={<CartPage />} /> */}
                 </Route>
             
