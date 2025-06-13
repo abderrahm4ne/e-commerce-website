@@ -175,34 +175,34 @@ export default function Product() {
 
 
                     <div className='flex flex-col justify-between px-3 lg:py-7 md:py-7 sm:py-7 gap-5 w-full ' >
-                        <div className='flex flex-col gap-2 ' style={{fontFamily: 'Oswald'}} >
-                            <div className='lg:text-3xl md:text:3xl text-2xl px-3 pb-4 pt-1'>
+                        <div className='flex flex-col gap-2 lg:self-start md:self-start sm:self-start self-center ' style={{fontFamily: 'Oswald'}} >
+                            <div className='lg:text-3xl md:text:3xl text-xl px-3 pb-4 pt-1'>
                                 {(currentProduct.name).toUpperCase()}
                             </div>
                             
-                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
+                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
                               ARTICLE : {currentProduct.article}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
+                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
                                 REFERENCE : {currentProduct.reference}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
+                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
                                 SERIES : {(currentProduct.series).toUpperCase()}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-xl px-3'>
+                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
                                 COLOR : {(currentProduct.color).toUpperCase()}
                             </div>
                         </div>
                         
                         <div className='flex flex-col gap-2 mb-7' style={{fontFamily: 'Oswald'}}>
-                            <div className='lg:text-3xl md:text:3xl text-2xl text-md px-3 py-0.5'>
+                            <div className='lg:text-3xl text-3xl text-md px-3 py-0.5'>
                                 PRICE : 130 €
                             </div>
 
-                            <button className='bg-[#3B3B3B] text-white text-2xl px-4 py-6 rounded-md w-[40%] hover:bg-[#2c2c2c] transition duration-300 hover:cursor-pointer'
+                            <button className='bg-[#3B3B3B] text-white text-2xl px-4 py-6 rounded-md lg:w-[40%] md:w-[40%] sm:w-[100%] w[100%] hover:bg-[#2c2c2c] transition duration-300 hover:cursor-pointer '
                             onClick={() => alert('Product added to cart!')}
                             >
                                 ADD TO CART
@@ -223,13 +223,13 @@ export default function Product() {
                 </div>
 
 
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col justify-center gap-3 w-[95%] self-center'>
                      
                      <div className='text-3xl px-3' style={{fontFamily: 'Oswald'}}>
                         SAME CATEGORY PRODUCTS : 
                      </div>
 
-                     <div className='flex flex-row flex-wrap gap-x-10 gap-y-5 p-3'>
+                     <div className='self-center w-[100%] flex flex-row flex-wrap p-3 gap-y-5 gap-x-3 '>
                         {myProducts
                             .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
                             .map(product  => (
