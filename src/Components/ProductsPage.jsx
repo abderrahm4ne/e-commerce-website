@@ -9,7 +9,6 @@ import TextField from '@mui/material/TextField';
 
 
 // React Components
-import Product from './Product';
 
 // OTHER LIBRARIES
 import gsap from 'gsap';
@@ -86,24 +85,22 @@ export default function ProductsPage() {
             <SearchIcon />
             </Fab>
 
-      {/* Modal for Search       
            <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={ShowSearch}
-                onClose={handleClose}
             >
                 <Box sx={style}>
                     <Typography>
                         Search Products
                     </Typography>
+                    <button onClick={() => {handleClose()}}>click to close</button>
 
                     <TextField id="outlined-basic" label="Search.." variant="outlined" />
  
                 </Box>
             </Modal>
 
-         */}
 
             <div className='flex flex-col items-center gap-2'>
                     <div className='grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4 w-[80%]'>
