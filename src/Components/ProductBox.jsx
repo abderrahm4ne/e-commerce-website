@@ -33,7 +33,7 @@ export function ProductBox({ product }) {
       </div>
 
       <button
-        className="w-full bg-[#3B3B3B] text-[#dbdbdb] py-4 text-2xl mt-4 rounded-lg 2xl:text-2xl xl:text-2xl md:text-md sm:text-sm sm:text-md">
+        className="w-full bg-[#3B3B3B] text-[#dbdbdb] py-4 text-2xl mt-4 rounded-lg 2xl:text-2xl xl:text-2xl md:text-md sm:text-sm sm:text-md" style={{fontFamily:"Oswald"}}>
           ADD TO CART
         </button>
     </div>

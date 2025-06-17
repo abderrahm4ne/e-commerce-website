@@ -6,7 +6,7 @@ import { Fab } from '@mui/material';
 // react hooks 
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 // components
@@ -20,7 +20,9 @@ export default function Product() {
 
     // CONTEXT
     const { myProducts , loading} = useContext(ProductContext);
-    
+    if (loading) {
+  return <h1>LOADING...</h1>;
+}
     const { id } = useParams();
 
     const [ smallScreen, setSmallScreen] = useState(true);
@@ -28,20 +30,19 @@ export default function Product() {
     const [ currentPicture, setCurrentPicture ] = useState('productPage.png');
 
     const currentProduct = myProducts.find(product => product.id === id);
-    if (!currentProduct) {
-        return (    
-            <Typography variant='h5' className='text-center text-[#3B3B3B]'>
-                Product not found
-            </Typography>
-        );
-    } 
+
+    const sameCatrgoryProduct = myProducts.filter(product => product.series === currentProduct.series && product.id != id)
+    
   
     const currentProductArrayOfPictures = [1 , 2, 3, 4].map(num => `../public/DB/${id}/${num}.jpg`);
 
-        const handleSwitch = () => {
+    const handleSwitch = () => {
             setSmallScreen(!smallScreen);
-        }
+    }
 
+    useEffect(() => {
+    window.scrollTo(0, 0);
+    }, [id]);
 
     return ( 
             
@@ -97,7 +98,8 @@ export default function Product() {
 
 
             {/* PRODUCT DETAILS */ }
-            
+            { 
+
             <div className='p-3 w-full flex flex-col h-full gap-5 '>
 
             { /* PATH */ }
@@ -128,15 +130,12 @@ export default function Product() {
             { /*---PATH---*/ }
 
 
-
-
             { /* PRODUCT PICTURES AND INFOS */ }
 
 
 
                 <div className='flex lg:flex-row md:flex-row flex-col w-full lg:h-full md:h-full border-1 border-black p-3 gap-3 rounded-md '>
 
-                { /* PRODUCT PICTURES */ }
 
                     <div className='border-black flex flex-col h-full lg:w-[30%] md:w-[30%] w-full'>
                             
@@ -167,32 +166,30 @@ export default function Product() {
                                 </div>
                     </div>
 
-                { /*---- PRODUCT PICTURES ----*/ }
 
                    <div className='lg:w-[1px] md:w-[1px] w-[100%] lg:h-full md:h-full h-[1px] bg-black lg:mx-4 md:mx-4 '/>
             
-                { /* PRODUCT INFOS */ }
 
 
                     <div className='flex flex-col justify-between px-3 lg:py-7 md:py-7 sm:py-7 gap-5 w-full ' >
                         <div className='flex flex-col gap-2 lg:self-start md:self-start sm:self-start self-center ' style={{fontFamily: 'Oswald'}} >
-                            <div className='lg:text-3xl md:text:3xl text-xl px-3 pb-4 pt-1'>
+                            <div className='lg:text-3xl md:text-3xl text-xl px-3 pb-4 pt-1'>
                                 {(currentProduct.name).toUpperCase()}
                             </div>
                             
-                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
+                            <div className='lg:text-2xl md:text-3xl text-md px-3'>
                               ARTICLE : {currentProduct.article}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
+                            <div className='lg:text-2xl md:text-3xl text-md px-3'>
                                 REFERENCE : {currentProduct.reference}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
+                            <div className='lg:text-2xl md:text-3xl text-md px-3'>
                                 SERIES : {(currentProduct.series).toUpperCase()}
                             </div>
 
-                            <div className='lg:text-2xl md:text:3xl text-md px-3'>
+                            <div className='lg:text-2xl md:text-3xl text-md px-3'>
                                 COLOR : {(currentProduct.color).toUpperCase()}
                             </div>
                         </div>
@@ -213,14 +210,10 @@ export default function Product() {
                     </div> 
 
 
-                { /*---- PRODUCT INFOS ----*/ }
-                
-
+                </div>
 
 
              { /* PRODUCT PICTURES AND INFOS */ }   
-                
-                </div>
 
 
                 <div className='flex flex-col justify-center gap-3 w-[95%] self-center'>
@@ -230,11 +223,9 @@ export default function Product() {
                      </div>
 
                      <div className='self-center w-[100%] flex flex-row flex-wrap p-3 gap-y-5 gap-x-3 '>
-                        {myProducts
-                            .filter(product => product.series === currentProduct.series && product.id !== currentProduct.id)
+                        { sameCatrgoryProduct.length === 0 ? (<h1 className='text-3xl text-[#3f3f3f]' style={{fontFamily:"Oswald", textShadow:"0px 4px 10px rgba(0, 0, 0, 0.5)"}}>NO PRODUCTS FROM THE SAME SERIES WERE FOUND.</h1>) : sameCatrgoryProduct
                             .map(product  => (
                                 <NavLink to={`/products/${product.id}`} key={product.id} className=''>
-                                                              
                                 <div className="flex flex-col items-center rounded-lg border-1 transition duration-300 ease-in-out hover:border-2 hover:scale-105 hover:shadow-lg p-3 w-[300px] min-h-[440px] h-auto" >
                                         
                                             <img 
@@ -258,15 +249,15 @@ export default function Product() {
                                 </div>
                                 
                                 </NavLink>
-                            ))
-                        }
+                            ))}
                      </div>
 
 
                 </div>
                                 
             </div>
-
+            
+            }
             {/* PRODUCT DETAILS */ }
 
 

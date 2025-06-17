@@ -35,8 +35,7 @@ export default function HomePage() {
             VIEW PRODUCTS
 
                 </button>
-            </NavLink>
-            
+            </NavLink>          
             
         </div>
 
