@@ -50,12 +50,12 @@ export default function ProductsPage() {
         }
 
     return (
-        <div className='flex flex-col gap-10'>          
+        <div className={`flex flex-col gap-10 `}>          
             
-            <div className='flex flex-col items-start gap-7'>
+            <div className={`flex flex-col items-start gap-7 ${ShowSearch ? 'blur-sm' : 'flex'}`}>
                 
                 <Typography variant="h3" gutterBottom={false} sx={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center", textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} className=''>
-                    OUR PRODUCTS
+                    PRODUCTS PAGE
                 </Typography>
                       
             </div>
@@ -87,44 +87,43 @@ export default function ProductsPage() {
                 open={ShowSearch}
                 className='self-center'
             >
-                <div className='bg-[#dbdbdb] py-7 px-5 w-[60%] justify-self-center rounded-2xl' style={{fontFamily:"Oswald"}}>
+                <div className=' py-7 px-5 w-[60%] justify-self-center rounded-2xl border-2 border-black' style={{fontFamily:"Oswald"}}>
                     <div className='flex flex-col gap-3 items-center'>
                         <div className='flex flex-row gap-3 w-[100%]'>
-                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT ARTILCE</span>
+                            <span className='w-[17%] self-center text-2xl'>PRODUCT ARTILCE</span>
                             <input type="text" className=' w-[80%] px-1 py-2 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'
                             />
                         </div>
 
                         <div className='flex flex-row gap-3 w-[100%]'>
-                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT REFERENCE</span>
+                            <span className='w-[17%] self-center text-2xl'>PRODUCT REFERENCE</span>
                             <input type="text" className=' w-[80%] px-1 py-2 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
                         </div>
 
                         <div className='flex flex-row gap-3 w-[100%]'>
-                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT CATEGORY</span>
+                            <span className='w-[17%] self-center text-2xl'>PRODUCT CATEGORY</span>
                             <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
                         </div>
 
                         <div className='flex flex-row gap-3 w-[100%]'>
-                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT COLOR</span>
+                            <span className='w-[17%] self-center text-2xl'>PRODUCT COLOR</span>
                             <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
                         </div>
 
                         <div className='flex flex-row gap-3 w-[100%]'>
-                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT SERIES</span>
+                            <span className='w-[17%] self-center text-2xl'>PRODUCT SERIES</span>
                             <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
                         </div>
 
                         <button className='text-3xl bg-[#3b3b3b] text-[#dbdbdb] px-4 py-3 rounded-md w-[20%]'>SEARCH</button>
                             
                     </div>
-                <button className='text-4xl' onClick={() => handleClose()}>close</button>
 
                 </div>
             </Modal>
 
 
-            <div className='flex flex-col items-center gap-2'>
+            <div className={`flex flex-col items-center gap-2 ${ShowSearch ? 'blur-sm' : 'flex'}`}>
                     <div className='grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4 w-[80%]'>
                         {loading ? (
                             <Typography variant="h1" gutterBottom={false} style={{color:"#3B3B3B", fontWeight:"bold", fontFamily:"Oswald", textAlign:"center"}}> 

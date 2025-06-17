@@ -54,14 +54,14 @@ export default function Product() {
             {smallScreen && (
                 <div className={`flex flex-col text-black-900 w-[17vw] h-full p-3 border-r-3 border-black-900 overflow-y-scroll`}>
                   
-                  <div className='font-bold text-3xl pl-8 text-[#3B3B3B] h-[10%]' style={{fontFamily: 'Oswald'}}>
+                  <div className='font-bold text-3xl pl-8 text-[#3B3B3B] h-[10%]' style={{fontFamily: 'Oswald', textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} >
                     Other Products
                   </div>
 
                   <div className='flex flex-col justify-center p-4' style={{fontFamily: 'Oswald'}}>
                       {myProducts.map((product) => (
                           <NavLink to={`/products/${product.id}`} key={product.id} className='p-3' >
-                              <Typography variant='h7' sx={{color:"#3B3B3B", fontWeight:"bold"}}>
+                              <Typography variant='h7' sx={{color:"#3B3B3B", fontWeight:"bold",textShadow:"2px 2px 4px rgba(0, 0, 0, 0.3)"}} > 
                                 {product.article}
                               </Typography>
                           </NavLink>
