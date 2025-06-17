@@ -45,12 +45,8 @@ export default function ProductsPage() {
 
     
 
-        const handleClose = () => {
-            setShowSearch(false);
-        }
-
-        const handleOpen = () => {
-            setShowSearch(true);
+        const handleSwitch = () => {
+            setShowSearch(!ShowSearch);
         }
 
     return (
@@ -80,7 +76,7 @@ export default function ProductsPage() {
                 alignItems: "center",
                 justifyContent: "center",
             }}
-            onClick={() => handleOpen()}
+            onClick={() => handleSwitch()}
             >
             <SearchIcon />
             </Fab>
@@ -89,16 +85,42 @@ export default function ProductsPage() {
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={ShowSearch}
+                className='self-center'
             >
-                <Box sx={style}>
-                    <Typography>
-                        Search Products
-                    </Typography>
-                    <button onClick={() => {handleClose()}}>click to close</button>
+                <div className='bg-[#dbdbdb] py-7 px-5 w-[60%] justify-self-center rounded-2xl' style={{fontFamily:"Oswald"}}>
+                    <div className='flex flex-col gap-3 items-center'>
+                        <div className='flex flex-row gap-3 w-[100%]'>
+                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT ARTILCE</span>
+                            <input type="text" className=' w-[80%] px-1 py-2 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'
+                            />
+                        </div>
 
-                    <TextField id="outlined-basic" label="Search.." variant="outlined" />
- 
-                </Box>
+                        <div className='flex flex-row gap-3 w-[100%]'>
+                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT REFERENCE</span>
+                            <input type="text" className=' w-[80%] px-1 py-2 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
+                        </div>
+
+                        <div className='flex flex-row gap-3 w-[100%]'>
+                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT CATEGORY</span>
+                            <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
+                        </div>
+
+                        <div className='flex flex-row gap-3 w-[100%]'>
+                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT COLOR</span>
+                            <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
+                        </div>
+
+                        <div className='flex flex-row gap-3 w-[100%]'>
+                            <span className='w-[17%] bg-amber-200 self-center text-2xl'>PRODUCT SERIES</span>
+                            <input type="text" className=' w-[80%] px-3 py-3 text-2xl border-1 border-[#3b3b3b] outline-none rounded-sm'/>
+                        </div>
+
+                        <button className='text-3xl bg-[#3b3b3b] text-[#dbdbdb] px-4 py-3 rounded-md w-[20%]'>SEARCH</button>
+                            
+                    </div>
+                <button className='text-4xl' onClick={() => handleClose()}>close</button>
+
+                </div>
             </Modal>
 
 
