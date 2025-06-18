@@ -15,3 +15,15 @@
   top: 0;
   left: 0;
 }
+
+input:hover{
+  cursor: pointer;
+}
+
+input:focus{
+  cursor: text;
+}
+
+select:hover{
+  cursor: pointer;
+}
